@@ -3,7 +3,6 @@ import os, csv
 def CalculateChange(startingValue, endingValue):
     return (endingValue - startingValue) #calculating the difference between the ending value and the starting value
 
-
 filePath = "C:\\Users\\nprab\\Downloads\\Starter_Code (2)\\Starter_Code\\PyBank\\Resources\\budget_data.csv"
 
 #filePath = os.path.join('resources', 'budget_data.csv')#import csv block of code
@@ -24,6 +23,7 @@ with open(filePath) as csvfile: #open the path to the CSV file as a new object
         #passing two values to CalculateChange function. the first parameter, startingValue, will be equal to the previous value of the iterator of the loop 
         #which would be the current position in the list monthlyValues - 1. the second parameter, endingValue, will be equal to the current value of the 
         # iterator of the loop. this value is then added to my empty list titled "monthlyChangeAmount"
+
         monthlyChangeAmount.append(CalculateChange(int(monthlyValues[rowCounter-1]), int(row[1])))
         monthlyChangeMonth.append(row[0]) #keep track of the months so I can map the name of the month to the value of the change for that month
         #keeping track of the row count for two reasons: 1. to be able to get the proper index for my list 
