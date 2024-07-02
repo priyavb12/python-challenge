@@ -1,5 +1,0 @@
-Total number of months: 86
-Total Profit/Losses: $22564198
-Average of changes: $-8311.11
-The greatest increase in profits occurred in 16-Aug with $1862002
-The greatest decrease in profits occurred in 14-Feb with $-1825558
