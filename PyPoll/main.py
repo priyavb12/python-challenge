@@ -6,6 +6,10 @@ csvpath =  "C:\\Users\\nprab\\OneDrive\\Desktop\\repos\\python-challenge\\PyPoll
 
 
 
+pathout = "C:\\Users\\nprab\\OneDrive\\Desktop\\repos\\python-challenge\\PyPoll\\analysis\\electionresults.txt"
+
+
+
 #pathout = os.path.join("Resources", "poll_analysis.txt")
 
 #initialize variables
@@ -59,23 +63,17 @@ print(f"Total Votes: {num_votes}")
 for count in range(len(candidates)):
     print(f"{candidates[count]}: {percentages[count]}% ({vote_counts[count]})")
 print("---------------------------")
-print(f"Winner: {winner}")
-print("---------------------------")
 
-write_file = f"pypoll_results_summary.txt"
+output = (
+    f"Total Votes: {num_votes}\n"
+    f"candidatescount: {percentages[count]}% ({vote_counts[count]}\n"
+    f"Winner: {winner}\n"
+    )
 
-#open write file
-filewriter = open(write_file, mode = 'w')
+print(output)
+with open(pathout, "w") as txt_file:
+    txt_file.write(output)
 
-#print analysis to file
-filewriter.write("Election Results\n")
-filewriter.write("--------------------------\n")
-filewriter.write(f"Total Votes: {num_votes}\n")
-for count in range(len(candidates)):
-    filewriter.write(f"{candidates[count]}: {percentages[count]}% ({vote_counts[count]})\n")
-filewriter.write("---------------------------\n")
-filewriter.write(f"Winner: {winner}\n")
-filewriter.write("---------------------------\n")
 
-#close file
-filewriter.close()
+with open(pathout, "w") as txt_file:
+    txt_file.write(output)
